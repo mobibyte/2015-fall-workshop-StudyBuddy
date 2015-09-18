@@ -1,0 +1,14 @@
+/* Empty. Add your own CSS if you like */
+.text-center {
+    text-align: center;
+}
+
+.class-item {
+    background: red;
+    border-radius: 50%;
+    color: #fff;
+    height: 100px;
+    text-align: center;
+    font-size: 44px;
+    padding-top: 25px;
+}
