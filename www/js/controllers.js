@@ -1,32 +1,19 @@
 angular.module('starter.controllers', [])
 
-.controller('MyClassesController', function($scope) {
-
+.controller('MyClassesController', function($scope, Courses) {
+    $scope.courses = Courses.getMyCourses();
 })
 
-.controller('BrowseController', function($scope, $ionicPopup) {
-    $scope.classes = [
-        {
-            title: 'Economics',
-            inClasses: false
-        },
-        {
-            title: 'C Programming'
-        },
-        {
-            title: 'Mobi Learn'
-        },
-        {
-            title: 'History Pre 1865'
-        },
-    ];
+.controller('BrowseController', function($scope, $ionicPopup, Courses) {
+    $scope.classes = Courses.getAllCourses();
 
     $scope.clickClass = function(index) {
-        var myClass = $scope.classes[index];
 
-        var popup = $ionicPopup.alert({
-            title: myClass.title
-        });
+        //var myClass = $scope.classes[index];
+        Courses.toggleCourse(index);
+        // var popup = $ionicPopup.alert({
+        //     title: myClass.title
+        // });
     }
 })
 

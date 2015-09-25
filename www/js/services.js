@@ -1,50 +1,53 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
-  // Might use a resource here that returns a JSON array
+.factory('Courses', function() {
+    // Way one
+    // var course = {};
+    // course.getAllCourses = function() {
+    //     alert('hello world');
+    // }
+    //
+    // return course;
 
-  // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
-  }];
+    var courses = [
+        {
+            title: 'Python',
+            imageUrl: 'http://icons.iconarchive.com/icons/icons8/ios7/512/Programming-Edit-Property-icon.png',
+            color: '#f53bfb',
+            hasCourse: true
+        },
+        {
+            title: 'Music',
+            imageUrl: 'http://www.clker.com/cliparts/m/a/C/f/d/7/white-music-note-md.png',
+            color: '#5187b9',
+            hasCourse: true
+        },
+        {
+            title: 'History',
+            imageUrl: 'http://liz.innovatesf.com/wp-content/uploads/sites/2/2013/08/icon_Black_book.png',
+            color: '#cd6743'
+        },
+    ];
 
-  return {
-    all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+    //Way two
+    return {
+        getAllCourses() {
+            return courses;
+        },
+
+        getMyCourses() {
+            var returnedCourses = [];
+            for(var i = 0; i < courses.length; i++) {
+                var myCourse = courses[i];
+                if(myCourse.hasCourse) {
+                    returnedCourses.push(myCourse);
+                }
+            }
+            return returnedCourses;
+        },
+
+        toggleCourse(index) {
+            courses[index].hasCourse = !courses[index].hasCourse;
         }
-      }
-      return null;
     }
-  };
 });
