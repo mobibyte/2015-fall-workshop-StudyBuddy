@@ -1,7 +1,10 @@
+<!-- cash-view means to refresh everytime -->
 <ion-view view-title="My Classes" cache-view="false">
   <ion-content class="padding">
     <h3 class="text-center">My Classes</h3>
+    <!-- flex-wrap means to break at the end of the screen -->
     <div class="row" style="flex-wrap: wrap">
+        <!-- col-33 means 3 in one row -->
         <div class="col col-33 class-wrapper" ng-repeat="course in courses">
             <div class="class-item" style="background: {{ course.color }}">
                 <img ng-src="{{ course.imageUrl }}" class="class-image" />

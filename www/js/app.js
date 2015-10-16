@@ -1,5 +1,8 @@
 // Ionic Starter App
 
+//Init parse
+Parse.initialize("1h1QF8mykgR8fISCvJyb46AE1outkLibigCMSEqN", "KKggz8tpAtRgsEWnesUSXNNOIDFJrOA8mlHa0dli");
+
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
@@ -24,7 +27,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
-
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
